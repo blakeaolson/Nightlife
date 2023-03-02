@@ -18,6 +18,7 @@ export default function MainContainer(){
       card: 'rgb(16, 16, 16)',
       text: 'white',
       border: 'rgb(60, 60, 60)',
+      notification: 'white',
     }
   };
 
@@ -27,9 +28,10 @@ export default function MainContainer(){
         initialRouteName='Home'
         screenOptions={ ({route}) => ({
           tabBarIcon: ({ focused }) => {
-            let iconName;
+            let iconName: string;
             let rn = route.name;
             let colorIcon;
+            iconName = '';
 
             if (rn === 'Home') {
               iconName = 'home'
