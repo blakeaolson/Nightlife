@@ -25,7 +25,7 @@ export default function MainContainer(){
   };
 
   return(
-    <NavigationContainer theme={mainTheme}>
+    <NavigationContainer theme={mainTheme} independent={true}>
       <Tab.Navigator
         initialRouteName='Home'
         screenOptions={ ({route}) => ({
@@ -58,7 +58,6 @@ export default function MainContainer(){
         <Tab.Screen name={'Home'} component={Main}/>
         <Tab.Screen name={'Friends'} component={Friends}/>
         <Tab.Screen name={'Profile'} component={Profile}/>
-        <Tab.Screen name={'Login'} component={Login}/>
       </Tab.Navigator>
     </NavigationContainer>
   )

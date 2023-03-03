@@ -1,9 +1,9 @@
 import * as React from 'react';
-import MainContainer from './Navigation/MainContainer';
+import MainNavigation from './Navigation/MainNavigation';
 
 export default function App() {
 
   return (
-    <MainContainer/>
+    <MainNavigation/>
   );
 }

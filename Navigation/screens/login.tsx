@@ -1,11 +1,16 @@
 import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useState } from 'react'
 import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 export default function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const navigation = useNavigation()
+    const navigation = useNavigation<NativeStackNavigationProp<any>>()
+
+    const handleSignUp = () => {
+      navigation.replace("MainContainer");
+    }
     return (
         <KeyboardAvoidingView
           style={styles.container}
@@ -35,7 +40,7 @@ export default function Login() {
               <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              //onPress={handleSignUp}
+              onPress={handleSignUp}
               style={[styles.button, styles.buttonOutline]}
             >
               <Text style={styles.buttonOutlineText}>Register</Text>
