@@ -3,9 +3,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from '@react-navigation/native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Main from './screens/main';
-import Friends from './screens/friends';
 import Profile from './screens/profile';
-import Login from './screens/login';
+import AddEvent from './screens/addevent';
 
 
 
@@ -37,14 +36,14 @@ export default function MainContainer(){
 
             if (rn === 'Home') {
               iconName = 'home'
-            } else if (rn === 'Friends') {
-              iconName = 'users';
+            } else if (rn === 'Post') {
+              iconName = 'plus-square';
             } else if (rn === 'Profile') {
               iconName = 'user-alt';
             }
             colorIcon = focused ? "rgb(255, 80, 80)" : "grey";
-
-            return <FontAwesome5 name={iconName} size={27}
+            
+            return <FontAwesome5 name={iconName} size={25}
             style={{
               marginTop: 5,
               alignSelf: 'center',
@@ -56,7 +55,7 @@ export default function MainContainer(){
         })}
       >
         <Tab.Screen name={'Home'} component={Main}/>
-        <Tab.Screen name={'Friends'} component={Friends}/>
+        <Tab.Screen name={'Post'} component={AddEvent}/>
         <Tab.Screen name={'Profile'} component={Profile}/>
       </Tab.Navigator>
     </NavigationContainer>
