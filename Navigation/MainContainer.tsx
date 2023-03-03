@@ -5,6 +5,8 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Main from './screens/main';
 import Friends from './screens/friends';
 import Profile from './screens/profile';
+import Login from './screens/login';
+
 
 
 const Tab = createBottomTabNavigator();
@@ -56,6 +58,7 @@ export default function MainContainer(){
         <Tab.Screen name={'Home'} component={Main}/>
         <Tab.Screen name={'Friends'} component={Friends}/>
         <Tab.Screen name={'Profile'} component={Profile}/>
+        <Tab.Screen name={'Login'} component={Login}/>
       </Tab.Navigator>
     </NavigationContainer>
   )
