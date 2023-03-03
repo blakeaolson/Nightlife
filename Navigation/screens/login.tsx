@@ -18,7 +18,7 @@ export default function Login() {
         >
           <View style={styles.inputContainer}>
             <TextInput
-              placeholder="Email"
+              placeholder="Username"
               value={email}
               onChangeText={text => setEmail(text)}
               style={styles.input}
