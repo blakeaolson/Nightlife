@@ -22,12 +22,14 @@ export default function Login() {
               value={email}
               onChangeText={text => setEmail(text)}
               style={styles.input}
+              placeholderTextColor="#A8A8A8"
             />
             <TextInput
               placeholder="Password"
               value={password}
               onChangeText={text => setPassword(text)}
               style={styles.input}
+              placeholderTextColor="#A8A8A8"
               secureTextEntry
             />
           </View>
@@ -37,7 +39,7 @@ export default function Login() {
               //onPress={handleLogin}
               style={styles.button}
             >
-              <Text style={styles.buttonText}>Login</Text>
+              <Text style={styles.buttonText}>Log in</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={handleSignUp}
@@ -61,11 +63,12 @@ export default function Login() {
         width: '80%'
       },
       input: {
-        backgroundColor: 'white',
+        backgroundColor: '#121212',
         paddingHorizontal: 15,
         paddingVertical: 10,
         borderRadius: 10,
         marginTop: 5,
+        color: "white"
       },
       buttonContainer: {
         width: '60%',
@@ -74,7 +77,7 @@ export default function Login() {
         marginTop: 40,
       },
       button: {
-        backgroundColor: '#0782F9',
+        backgroundColor: '#004A7B',
         width: '100%',
         padding: 15,
         borderRadius: 10,
@@ -87,7 +90,7 @@ export default function Login() {
         borderWidth: 2,
       },
       buttonText: {
-        color: 'white',
+        color: '#808080',
         fontWeight: '700',
         fontSize: 16,
       },
