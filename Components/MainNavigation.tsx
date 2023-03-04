@@ -4,9 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Main from './screens/main';
 import Profile from './screens/profile';
-import AddEvent from './screens/addevent';
-
-
+import EventModal from './screens/EventModal';
 
 const Tab = createBottomTabNavigator();
 
@@ -14,7 +12,7 @@ export default function MainContainer(){
   const mainTheme = {
     dark: true,
     colors: {
-      primary: 'rgb(255, 80, 80)',
+      primary: 'white',
       background: 'black',
       card: 'rgb(16, 16, 16)',
       text: 'white',
@@ -22,7 +20,9 @@ export default function MainContainer(){
       notification: 'white',
     }
   };
-
+  const PostComponent = () => {
+    return null;
+  }
   return(
     <NavigationContainer theme={mainTheme} independent={true}>
       <Tab.Navigator
@@ -41,9 +41,9 @@ export default function MainContainer(){
             } else if (rn === 'Profile') {
               iconName = 'user-alt';
             }
-            colorIcon = focused ? "rgb(255, 80, 80)" : "grey";
+            colorIcon = focused ? "white" : "grey";
             
-            return <FontAwesome5 name={iconName} size={25}
+            return <FontAwesome5 name={iconName} size={24}
             style={{
               marginTop: 5,
               alignSelf: 'center',
@@ -54,9 +54,11 @@ export default function MainContainer(){
           headerShown:false
         })}
       >
-        <Tab.Screen name={'Home'} component={Main}/>
-        <Tab.Screen name={'Post'} component={AddEvent}/>
-        <Tab.Screen name={'Profile'} component={Profile}/>
+        <Tab.Screen name={'Home'} component={Main} options={{tabBarShowLabel:false}}/>
+        <Tab.Screen name={'Post'} component={PostComponent} options={{
+          tabBarButton: () => (<EventModal/>),
+        }}/>
+        <Tab.Screen name={'Profile'} component={Profile} options={{tabBarShowLabel:false}}/>
       </Tab.Navigator>
     </NavigationContainer>
   )

@@ -9,7 +9,7 @@ export default function Login() {
     const navigation = useNavigation<NativeStackNavigationProp<any>>()
 
     const handleSignUp = () => {
-      navigation.replace("MainContainer");
+      navigation.replace("MainNavigation");
     }
     return (
         <KeyboardAvoidingView

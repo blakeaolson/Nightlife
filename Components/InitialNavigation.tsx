@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import MainContainer from './MainContainer';
+import MainNavigation from './MainNavigation';
 import Login from './screens/login';
-import { color } from 'react-native-elements/dist/helpers';
 const Stack = createNativeStackNavigator();
 
-export default function MainNavigation() {
+export default function InitialNavigation() {
   const mainTheme = {
     dark: true,
     colors: {
@@ -23,7 +21,7 @@ export default function MainNavigation() {
     <NavigationContainer theme={mainTheme}>
       <Stack.Navigator>
         <Stack.Screen options={{ headerShown: false }} name="Login" component={Login} />
-        <Stack.Screen options={{ headerShown: false }} name="MainContainer" component={MainContainer} />
+        <Stack.Screen options={{ headerShown: false }} name="MainNavigation" component={MainNavigation} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import MainNavigation from './Navigation/MainNavigation';
+import InitialNavigation from './Components/InitialNavigation';
 
 export default function App() {
 
   return (
-    <MainNavigation/>
+    <InitialNavigation/>
   );
 }
