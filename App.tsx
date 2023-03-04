@@ -1,5 +1,5 @@
 import * as React from 'react';
-import InitialNavigation from './Components/InitialNavigation';
+import InitialNavigation from './Navigation/InitialNavigation';
 
 export default function App() {
 
