@@ -2,15 +2,38 @@ import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useState } from 'react'
 import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { initializeApp } from "firebase/app";
+import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
+import {firebaseConfig} from '../../firebase'
+
+
+
 
 export default function Login() {
-    const [email, setEmail] = useState('')
+    const [username, setUsername] = useState('')
+    // const [phone, setPhone] = useState('')
     const [password, setPassword] = useState('')
     const navigation = useNavigation<NativeStackNavigationProp<any>>()
-
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
     const handleSignUp = () => {
+      createUserWithEmailAndPassword(auth, username, password)
+      .then(userCredentials => {
+        const user = userCredentials.user;
+        console.log('Registered with:', user.email);
+      })
+      .catch(error => alert(error.message))
       navigation.replace("MainNavigation");
     }
+    const handleLogin = () => {
+        signInWithEmailAndPassword(auth, username, password)
+        .then(userCredentials => {
+          const user = userCredentials.user;
+          console.log('Logged in with:', user.email);
+        })
+        .catch(error => alert(error.message))
+    }
+
     return (
         <KeyboardAvoidingView
           style={styles.container}
@@ -19,11 +42,19 @@ export default function Login() {
           <View style={styles.inputContainer}>
             <TextInput
               placeholder="Username"
-              value={email}
-              onChangeText={text => setEmail(text)}
+              value={username}
+              onChangeText={text => setUsername(text)}
               style={styles.input}
               placeholderTextColor="#A8A8A8"
             />
+            {/* <TextInput
+              placeholder="Phone Number"
+              value={phone}
+              onChangeText={text => setPhone(text)}
+              style={styles.input}
+              placeholderTextColor="#A8A8A8"
+            /> */}
+
             <TextInput
               placeholder="Password"
               value={password}
@@ -36,7 +67,7 @@ export default function Login() {
     
           <View style={styles.buttonContainer}>
             <TouchableOpacity
-              //onPress={handleLogin}
+              onPress={handleLogin}
               style={styles.button}
             >
               <Text style={styles.buttonText}>Log in</Text>
