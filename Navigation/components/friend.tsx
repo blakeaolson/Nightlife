@@ -18,13 +18,12 @@ export default function Friend() {
 }
 const styles = StyleSheet.create({
   profileview: {
-    flex: 0.13,
+    height: 55,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgb(16, 16, 16)',
-    borderRadius: 20,
+    borderRadius: 13,
     marginTop: 10,
-    paddingLeft: 30,
+    paddingLeft: 10,
   },
 
 

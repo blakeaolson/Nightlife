@@ -24,14 +24,18 @@ export default function Profile() {
           placeholderTextColor={'grey'}
           placeholder={'Add or search friends'}
         ></SearchBar>
-        <ScrollView contentContainerStyle={{ flex: 1, marginTop: 20}}>
-            <Text style={{color: 'lightgrey', fontWeight:'600', marginLeft:10}}>MY FRIENDS</Text>
-            
+        <ScrollView>
+            <Text style={{color: 'lightgrey', fontWeight:'600', marginLeft:10, marginTop: 20}}>MY FRIENDS</Text>
             <Friend></Friend>
             <Friend></Friend>
             <Friend></Friend>
             <Friend></Friend>
-        
+            <Friend></Friend>
+            <Friend></Friend>
+            <Friend></Friend>
+            <Friend></Friend>
+            <Friend></Friend>
+            <Friend></Friend>
 
         </ScrollView>
       </SafeAreaView>
@@ -41,13 +45,14 @@ export default function Profile() {
 
 const styles = StyleSheet.create({
   profileview: {
-    flex: 0.15,
+    height: '12%',
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'rgb(16, 16, 16)',
-    borderRadius: 20,
-    marginTop: 30,
-    paddingLeft: 30,
+    borderRadius: 12,
+    marginTop: 15,
+    paddingLeft: 20,
+    position: 'fixed',
   },
 
 

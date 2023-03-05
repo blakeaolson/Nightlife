@@ -32,6 +32,7 @@ export default function Login() {
           console.log('Logged in with:', user.email);
         })
         .catch(error => alert(error.message))
+        navigation.replace("MainNavigation");
     }
 
     return (
