@@ -17,6 +17,7 @@ export default function Profile() {
                 <Text style={{color: 'grey', fontSize: 16}}>The current status of user</Text>
               </View>
         </View>
+       
         <SearchBar
           inputStyle={{backgroundColor: 'rgb(16, 16, 16)'}}
           inputContainerStyle={{backgroundColor: 'rgb(16, 16, 16)'}}
@@ -46,6 +47,7 @@ export default function Profile() {
 const styles = StyleSheet.create({
   profileview: {
     height: '12%',
+    width: '97%',
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'rgb(16, 16, 16)',
@@ -53,6 +55,8 @@ const styles = StyleSheet.create({
     marginTop: 15,
     paddingLeft: 20,
     position: 'fixed',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
 
 
