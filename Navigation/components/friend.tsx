@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { Image } from 'react-native-elements';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export default function Friend() {
     return (
@@ -14,7 +14,7 @@ export default function Friend() {
                 <Text style={{color: 'white', fontWeight:'600', fontSize:14}}>Username</Text>
                 <Text style={{color: 'grey', fontSize: 14}}>Current status of friend</Text>
               </View>
-              <FontAwesome5 name='times' size={15}
+              <Icon name='close' size={20}
               style={{
                 marginTop: 5,
                 alignSelf: 'center',

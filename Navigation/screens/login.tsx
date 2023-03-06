@@ -47,6 +47,7 @@ export default function Login() {
               onChangeText={text => setUsername(text)}
               style={styles.input}
               placeholderTextColor="#A8A8A8"
+              keyboardAppearance='dark'
             />
             {/* <TextInput
               placeholder="Phone Number"
@@ -62,6 +63,7 @@ export default function Login() {
               onChangeText={text => setPassword(text)}
               style={styles.input}
               placeholderTextColor="#A8A8A8"
+              keyboardAppearance='dark'
               secureTextEntry
             />
           </View>

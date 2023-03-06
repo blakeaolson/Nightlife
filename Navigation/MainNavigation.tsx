@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from '@react-navigation/native';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Main from './screens/main';
 import Profile from './screens/profile';
 import EventModal from './screens/EventModal';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
 
@@ -36,16 +36,13 @@ export default function MainContainer(){
 
             if (rn === 'Home') {
               iconName = 'home'
-            } else if (rn === 'Post') {
-              iconName = 'plus-square';
             } else if (rn === 'Profile') {
-              iconName = 'user-alt';
+              iconName = 'person';
             }
             colorIcon = focused ? "white" : "grey";
             
-            return <FontAwesome5 name={iconName} size={24}
+            return <Icon name={iconName} size={26}
             style={{
-              marginTop: 5,
               alignSelf: 'center',
               color: colorIcon,
             }}
