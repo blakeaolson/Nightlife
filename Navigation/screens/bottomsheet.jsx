@@ -4,7 +4,7 @@ import { Button, Text } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 import BottomSheet from 'reanimated-bottom-sheet';
 
-export default function EventModal(){
+export default function BottomSheetComponent(){
   const sheetRef = React.useRef(null);
 
   const renderContent = () => (

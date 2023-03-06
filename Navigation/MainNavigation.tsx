@@ -2,9 +2,9 @@ import * as React from 'react';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from '@react-navigation/native';
 import Main from './screens/main';
-import Profile from './screens/profile';
-import EventModal from './screens/EventModal';
 import Icon from 'react-native-vector-icons/Ionicons';
+import BottomSheetComponent from './screens/bottomsheet';
+import ProfileNavigation from './ProfileNavigation';
 
 const Tab = createBottomTabNavigator();
 
@@ -53,9 +53,9 @@ export default function MainContainer(){
       >
         <Tab.Screen name={'Home'} component={Main} options={{tabBarShowLabel:false}}/>
         <Tab.Screen name={'Post'} component={PostComponent} options={{
-          tabBarButton: () => (<EventModal/>),
+          tabBarButton: () => (<BottomSheetComponent/>),
         }}/>
-        <Tab.Screen name={'Profile'} component={Profile} options={{tabBarShowLabel:false}}/>
+        <Tab.Screen name={'Profile'} component={ProfileNavigation} options={{tabBarShowLabel:false}}/>
       </Tab.Navigator>
     </NavigationContainer>
   )
